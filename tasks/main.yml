@@ -20,8 +20,8 @@
     name: /etc/loki
     state: directory
 - name: Download loki config
-  ansible.builtin.get_url:
-    url: https://github.com/grafana/loki/raw/main/cmd/loki/loki-local-config.yaml
+  ansible.builtin.copy:
+    src: loki.yml
     dest: /etc/loki/loki.yml
     mode: '0755'
     owner: root
